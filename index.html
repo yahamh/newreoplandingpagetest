@@ -102,29 +102,31 @@
 
 <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
 <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='SMSPHONE';ftypes[6]='smsphone';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[7]='UBPAGEID';ftypes[7]='text';fnames[8]='UBVARIANT';ftypes[8]='text';fnames[9]='UBDATE';ftypes[9]='date';}(jQuery));var $mcj = jQuery.noConflict(true); 
-    $(document).ready(function() {
-        $("#mc-embedded-subscribe").click(function(event) {  // Add event parameter
+    
+$(document).ready(function() {
+    $("#mc-embedded-subscribe").click(function(event) {
+        event.preventDefault(); // Prevent default action
+
+        // Trigger Mailchimp validation
+        var $form = $('#mc-embedded-subscribe-form');
+
+        // Check if Mailchimp validation passed
+        if ($form[0].checkValidity()) {
+            // Allow Mailchimp to process the form
+            $form.unbind('submit').submit();
             event.preventDefault(); // Prevent default action
-    
-            // Trigger Mailchimp validation
-            var $form = $('#mc-embedded-subscribe-form');
-    
-            // Check if Mailchimp validation passed
-            if ($form[0].checkValidity()) {
-                // Submit the form and redirect on success
-                $form.submit(function(e) {
-                    e.preventDefault();  // Prevent the second submission
-                    location.href = "./successpage.html";
-                });
-    
-                // Trigger form submission
-                $form.submit();
-            } else {
-                // If validation fails, trigger the built-in form validation
-                alert("Please fill in all required fields correctly.");
-            }
-        });
+
+
+            // Delay the redirection slightly to ensure Mailchimp processing completes
+            setTimeout(function() {
+                location.href = "./successpage.html";
+            }, 1000); // Adjust the delay as needed
+        } else {
+            // If validation fails, trigger the built-in form validation
+            alert("Please fill in all required fields correctly.");
+        }
     });
+});
     </script></div>
 
     </div>
