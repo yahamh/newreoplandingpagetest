@@ -35,15 +35,15 @@
      <div id="mc_embed_shell">
       <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <style type="text/css">
-        #mc_embed_signup}
+        #mc_embed_signup
         /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 <div id="mc_embed_signup" class="main_form">
     <form action="https://yacinehamdani.us21.list-manage.com/subscribe/post?u=a1d01c3568a7a75dcb3d3d58b&amp;id=b0925a4e1e&amp;f_id=0012f8e6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
         <div id="mc_embed_signup_scroll " class="main_form2">
-            <!-- <div class="indicates-required"> -->
-            	<!-- <span class="asterisk">*</span> indicates required</div> -->
+            <div class="indicates-required">
+            	<span class="asterisk">*</span> indicates required</div>
             <div class="mc-field-group">
             	<label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
             	<input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div><div class="mc-field-group">
@@ -65,73 +65,47 @@
 		        <div id="mce-responses" class="clear">
 		            <div class="response" id="mce-error-response" style="display: none;"></div>
 		            <div class="response" id="mce-success-response" style="display: none;"></div>
-		        </div><div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_a1d01c3568a7a75dcb3d3d58b_b0925a4e1e" tabindex="-1" value=""></div><div class="clear"><input type="submit" name="subscribe" id="mc-embedded-subscribe"  class="button" onclick="myFunction()" value="Join Now" >
+		        </div><div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_a1d01c3568a7a75dcb3d3d58b_b0925a4e1e" tabindex="-1" value=""></div><div class="clear"><input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Join Now" >
 		        </div>
 		    </div>
 		</form>
 </div>
-<!-- <div id="success-message"> -->
-        <!-- <h3>Done! You've secured your exclusive spot on our waitlist.</h3> -->
-        <!-- <p>We'll be in touch soon.</p> -->
-    <!-- </div> -->
+ 
+ 
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" ></script>
+<script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='SMSPHONE';ftypes[6]='smsphone';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[7]='UBPAGEID';ftypes[7]='text';fnames[8]='UBVARIANT';ftypes[8]='text';fnames[9]='UBDATE';ftypes[9]='date';}(jQuery)); 
+   $mcj = jQuery.noConflict(true);
+   document.addEventListener("DOMContentLoaded", function() {
+    var successResponse = document.getElementById("mce-success-response");
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- <script type="text/javascript">
-    document.getElementById("mc-embedded-subscribe").onclick = function() {
-        // Prevent default action
-        event.preventDefault();
+    // Create a MutationObserver to watch for changes in the display style
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === "attributes" && mutation.attributeName === "style") {
+                if (getComputedStyle(successResponse).display === "block") {
+                    window.location.href = "/HTML/successpage.html"; // Redirect to the success page
+                }
+            }
+        });
+    });
 
-        // Get form field values
-        var email = document.getElementById("mce-EMAIL").value.trim();
-        var fname = document.getElementById("mce-FNAME").value.trim();
-        var lname = document.getElementById("mce-LNAME").value.trim();
-
-        // Check if required fields are filled
-        if (email === "" || fname === "" || lname === "") {
-            alert("Please fill in all required fields.");
-        } else {
-            // Submit the form
-            document.getElementById("mc-embedded-subscribe-form").submit();
-
-            // Redirect to the success page
-            location.href = "/HTMl/successpage.html";
-        }
-    };
-</script>
- -->
-
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-<script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='SMSPHONE';ftypes[6]='smsphone';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[7]='UBPAGEID';ftypes[7]='text';fnames[8]='UBVARIANT';ftypes[8]='text';fnames[9]='UBDATE';ftypes[9]='date';}(jQuery));var $mcj = jQuery.noConflict(true); 
-    
-$(document).ready(function() {
-    $("#mc-embedded-subscribe").click(function(event) {
-        event.preventDefault(); // Prevent default action
-
-        // Trigger Mailchimp validation
-        var $form = $('#mc-embedded-subscribe-form');
-
-        // Check if Mailchimp validation passed
-        if ($form[0].checkValidity()) {
-            // Allow Mailchimp to process the form
-            $form.unbind('submit').submit();
-            event.preventDefault(); // Prevent default action
-
-
-            // Delay the redirection slightly to ensure Mailchimp processing completes
-            setTimeout(function() {
-                location.href = "./successpage.html";
-            }, 1000); // Adjust the delay as needed
-        } else {
-            // If validation fails, trigger the built-in form validation
-            alert("Please fill in all required fields correctly.");
-        }
+    // Observe the success response element for attribute changes
+    observer.observe(successResponse, {
+        attributes: true, // Monitor attributes changes
+        attributeFilter: ["style"] // Specifically monitor the style attribute
     });
 });
-    </script></div>
+    
+    </script>
+
+
+
+
+</div>
 
     </div>
 
-
+    </div>
    
 </div>
 
@@ -266,17 +240,7 @@ $(document).ready(function() {
     </div>
 </div>
 
-<!-- overlay end part -->
-<!-- <div id="dijit__TemplatedMixin_2" widgetid="dijit__TemplatedMixin_2" style="">
-    <div class="mcPrivacyBadge">
-            <div class="reportAbuseWrapper">
-                <a class="privacyLink report-abuse" target="_blank" href="https://mailchimp.com/contact/abuse/" style="color: black;">Report Abuse</a>
-            </div>
-            <a class="monkeyrewards" target="_blank" href="https://mailchimp.com/referral/?utm_source=freemium_landingpage&utm_medium=landingpage&utm_campaign=referral_marketing">
-                <img src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" style="width: 100px;" class="logo">
-            </a>
-        </div>
-    </div> -->
+
 </div>
 
 
