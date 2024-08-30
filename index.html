@@ -83,7 +83,7 @@
         mutations.forEach(function(mutation) {
             if (mutation.type === "attributes" && mutation.attributeName === "style") {
                 if (getComputedStyle(successResponse).display === "block") {
-                    window.location.href = "/HTML/successpage.html"; // Redirect to the success page
+                    window.location.href = "./successpage.html"; // Redirect to the success page
                 }
             }
         });
